@@ -1,0 +1,32 @@
+// 1. Utilities - Variables, mixins y extends
+@use "../scss/partials/utilities/variables";
+@use "../scss/partials/utilities/mixins";
+@use "../scss/partials/utilities/exend";
+
+// 2. Base - Fundamentos
+@use "../scss/partials/base/reset";
+@use "../scss/partials/base/typography";
+@use "../scss/partials/base/global";
+
+// 3. Layout - Estructura
+@use "../scss/partials/layout/header";
+@use "../scss/partials/layout/main";
+@use "../scss/partials/layout/section";
+@use "../scss/partials/layout/footer";
+
+// 4. Components - Elementos reutilizables
+@use "../scss/partials/components/buttons";
+@use "../scss/partials/components/cards";
+@use "../scss/partials/components/forms";
+@use "../scss/partials/components/overlays";
+
+// 5. Pages - Específico por página
+@use "../scss/partials/pages/home";
+@use "../scss/partials/pages/nosotros";
+@use "../scss/partials/pages/servicios";
+@use "../scss/partials/pages/portafolio";
+@use "../scss/partials/pages/contacto";
+
+// 6. Helpers - Ayudantes
+@use "../scss/partials/helpers/animations";
+@use "../scss/partials/helpers/responsive";
