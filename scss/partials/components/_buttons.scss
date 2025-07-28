@@ -1,0 +1,46 @@
+@use "../utilities/variables";
+@use "../utilities/extend";
+
+// ===== BOTONES =====
+
+// Botón CTA principal
+.cta__button {
+    font-family: variables.$font-heading;
+    font-size: clamp(32px, 5vw, 48px);
+    text-decoration-line: underline;
+    color: variables.$color-accent;
+    transition: color variables.$transition-normal ease;
+
+    &:hover {
+        color: variables.$color-primary;
+    }
+}
+
+// Botón de formulario de contacto
+.contact__button {
+    @extend %button-base;
+    font-size: variables.$font-size-md !important;
+    color: variables.$color-bg-primary !important;
+    background-color: variables.$color-primary !important;
+    border: 2px solid variables.$color-primary !important;
+    border-radius: variables.$border-radius-round !important;
+    padding: 15px 40px !important;
+    width: 100% !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:hover {
+        background-color: #333333 !important;
+        border-color: #333333 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(26, 26, 26, 0.3) !important;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(26, 26, 26, 0.3) !important;
+    }
+
+    &:active {
+        transform: translateY(0) !important;
+    }
+}

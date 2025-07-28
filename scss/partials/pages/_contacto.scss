@@ -1,0 +1,18 @@
+@use "../utilities/variables";
+@use "../utilities/mixins";
+
+// ===== PÁGINA CONTACTO =====
+
+// Sección Contacto
+.contact {
+    padding: 100px 0;
+    background-color: variables.$color-bg-primary;
+
+    &__container {
+        @include mixins.container-base();
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: variables.$spacing-xxl;
+        align-items: start;
+    }
+}

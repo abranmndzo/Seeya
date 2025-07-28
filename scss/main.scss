@@ -1,0 +1,34 @@
+// ===== MAIN SCSS - SEEYA =====
+
+// UTILITIES
+@use "./partials/utilities/variables";
+@use "./partials/utilities/mixins";
+@use "./partials/utilities/extend";
+
+// BASE
+@use "./partials/base/reset";
+@use "./partials/base/typography";
+@use "./partials/base/global";
+
+// LAYOUT
+@use "./partials/layout/section";
+@use "./partials/layout/header";
+@use "./partials/layout/main";
+@use "./partials/layout/footer";
+
+// COMPONENTS
+@use "./partials/components/buttons";
+@use "./partials/components/cards";
+@use "./partials/components/forms";
+@use "./partials/components/overlays";
+
+// PAGES
+@use "./partials/pages/home";
+@use "./partials/pages/nosotros";
+@use "./partials/pages/servicios";
+@use "./partials/pages/portafolio";
+@use "./partials/pages/contacto";
+
+// HELPERS
+@use "./partials/helpers/animations";
+@use "./partials/helpers/responsive";
