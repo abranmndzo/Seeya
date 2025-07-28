@@ -1264,6 +1264,11 @@ body {
     width: 120px;
     height: 42px;
   }
+  .about-story__content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
   .about-story__text {
     padding-right: 0;
     order: 2;
