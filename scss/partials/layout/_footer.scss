@@ -1,0 +1,87 @@
+// ===== IMPORTAR VARIABLES Y MIXINS =====
+@use "../utilities/variables";
+@use "../utilities/mixins";
+
+// ===== FOOTER =====
+.footer {
+    background-color: variables.$color-bg-dark;
+    color: variables.$color-bg-primary;
+    padding: 50px 0 30px 0;
+
+    &__container {
+        @include mixins.container-base(variables.$container-large);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: variables.$spacing-xl;
+    }
+
+    // Información del footer
+    &__info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: variables.$spacing-lg;
+    }
+
+    &__contact p {
+        color: variables.$color-text-lightest;
+        font-size: variables.$font-size-sm;
+        margin-bottom: 0.5rem;
+    }
+
+    &__email {
+        font-weight: 500;
+    }
+
+    &__brand {
+        text-align: right;
+    }
+
+    &__tagline {
+        color: variables.$color-text-lightest;
+        font-size: variables.$font-size-sm;
+        margin-bottom: variables.$spacing-sm;
+    }
+
+    // Redes sociales
+    &__social {
+        display: flex;
+        gap: variables.$spacing-sm;
+        justify-content: flex-end;
+    }
+
+    &__social-link {
+        display: inline-block;
+        transition: opacity variables.$transition-normal ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__social-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    // Parte inferior del footer
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: variables.$spacing-lg;
+        border-top: 1px solid variables.$color-border-dark;
+    }
+
+    &__logo {
+        height: clamp(40px, 10vw, 80px);
+        width: auto;
+    }
+
+    &__copyright {
+        color: variables.$color-text-light;
+        font-size: variables.$font-size-xs;
+    }
+}

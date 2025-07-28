@@ -1,0 +1,46 @@
+// ===== PLACEHOLDERS PARA EXTEND =====
+
+// Contenedor base
+%container-base {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+// Contenedor grande
+%container-large {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+// Transición suave
+%smooth-transition {
+    transition: all 0.3s ease;
+}
+
+// Hover lift
+%hover-lift {
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+// Card base
+%card-base {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+// Button base
+%button-base {
+    font-family: "Basis Grotesque Arabic Pro", "Manrope", sans-serif;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}

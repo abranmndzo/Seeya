@@ -1,0 +1,73 @@
+// ===== VARIABLES GLOBALES =====
+
+// Colores principales
+$color-primary: #1a1a1a;
+$color-secondary: #666666;
+$color-accent: #979797;
+$color-text: #333333;
+$color-text-light: #666666;
+$color-text-lighter: #999999;
+$color-text-lightest: #cccccc;
+
+// Colores de fondo
+$color-bg-primary: #ffffff;
+$color-bg-secondary: #f9f9f9;
+$color-bg-dark: #1a1a1a;
+
+// Colores de borde
+$color-border: #e0e0e0;
+$color-border-dark: #333333;
+
+// Tipografías
+$font-heading: "Basis Grotesque Arabic Pro", "Manrope", sans-serif;
+$font-body: "Manrope", sans-serif;
+
+// Tamaños de fuente
+$font-size-xs: 14px;
+$font-size-sm: 16px;
+$font-size-md: 18px;
+$font-size-lg: 24px;
+$font-size-xl: 32px;
+
+// Espaciados
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 4rem;
+
+// Padding de secciones
+$section-padding: 80px;
+$section-padding-mobile: 60px;
+
+// Contenedores
+$container-max-width: 1200px;
+$container-large: 1400px;
+$container-medium: 800px;
+
+// Border radius
+$border-radius-sm: 8px;
+$border-radius-md: 15px;
+$border-radius-lg: 20px;
+$border-radius-xl: 25px;
+$border-radius-round: 50px;
+
+// Sombras
+$shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.15);
+
+// Z-index
+$z-index-header: 1000;
+$z-index-overlay: 100;
+
+// Breakpoints
+$tablet: 991.98px;
+$mobile: 576px;
+
+// Transiciones
+$transition-fast: 0.2s;
+$transition-normal: 0.3s;
+$transition-slow: 0.6s;

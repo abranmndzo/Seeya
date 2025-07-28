@@ -1,0 +1,228 @@
+// ===== IMPORTAR VARIABLES =====
+@use "../utilities/variables";
+
+// ===== RESPONSIVE DESIGN =====
+
+// Tablets (768px y menores)
+@media (max-width: variables.$tablet) {
+
+    // Responsive para títulos de secciones
+    .section {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "subtitle"
+            "title"
+            "description"  
+            "tags";
+        
+        &__title,
+        &__subtitle,
+        &__description {
+            text-align: center;
+        }
+
+        &__tags {
+            justify-content: center;
+        }
+    }
+
+    // Header responsive
+    .header {
+        top: 1%;
+        width: 96%;
+        max-width: none;
+        border-radius: variables.$border-radius-lg;
+
+        &__nav-collapse {
+            background: transparent !important;
+            backdrop-filter: none;
+            border: none;
+            box-shadow: none;
+            padding: .75rem;
+        }
+
+        &__nav-list {
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        &__nav-item {
+            width: 100%;
+        }
+
+        &__nav-link {    
+            width: 100%;
+            text-align: center;
+            padding: 0.75rem 1rem !important;
+            border-radius: variables.$border-radius-md;
+        }
+    }
+
+    // Contenido principal
+    .main {
+        margin-top: 5vw;
+    }
+
+    .hero {
+        padding: variables.$section-padding-mobile 0;
+    }
+
+    .portfolio,
+    .process,
+    .testimonials,
+    .cta {
+        padding: variables.$section-padding-mobile 0;
+    }
+
+    // Proceso en móvil
+    .process__steps {
+        flex-direction: column;
+        text-align: center;
+        gap: .5rem;
+    }
+
+    .process__arrow {
+        transform: rotate(90deg);
+        margin: variables.$spacing-sm 0;
+    }
+
+    // Footer responsive
+    .footer__bottom {
+        flex-direction: column;
+        gap: variables.$spacing-sm;
+        text-align: center;
+    }
+
+    // Página Nosotros
+    .about-story__content {
+        grid-template-columns: 1fr;
+        gap: variables.$spacing-xl;
+        text-align: center;
+    }
+    
+    .about-story__text {
+        padding-right: 0;
+        order: 2;
+    }
+    
+    .about-story__image-container {
+        order: 1;
+    }
+    
+    .team__founders {
+        grid-template-columns: 1fr;
+        gap: variables.$spacing-xl;
+        text-align: center;
+    }
+    
+    .values__grid {
+        grid-template-columns: 1fr;
+        gap: variables.$spacing-lg;
+    }
+    
+    .team__members {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: variables.$spacing-md;
+    }
+}
+
+// Móviles pequeños (576px y menores)
+@media (max-width: variables.$mobile) {
+
+    // Header móvil
+    .header {
+        top: 10px;
+        width: 97%;
+        border-radius: variables.$border-radius-lg;
+
+        &__navbar {
+            padding: 0.5rem 1rem;
+        }
+
+        &__logo-img {
+            height: 28px;
+        }
+
+        &__nav-link {
+            font-size: variables.$font-size-xs !important;
+            padding: 0.6rem 1rem !important;
+        }
+    }
+
+    // Contenido móvil
+    .main {
+        margin-top: 10vw;
+    }
+
+    .section,
+    .portfolio__container,
+    .process__container,
+    .testimonials__container,
+    .cta__container,
+    .footer__container {
+        padding: 0 15px;
+    }
+
+    .footer__brand {
+        text-align: left;
+    }
+
+    .footer__social {
+        justify-content: flex-start;
+    }
+
+    // Hero tags en móvil
+    .hero__tags {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // Grid móvil
+    .portfolio__grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "item1"
+            "item2"
+            "item3"
+            "item4"
+            "item5"
+            "item6"
+            "item7";
+    }
+
+    .testimonials__item {
+        flex: 0 0 300px;
+        padding: variables.$spacing-md;
+    }
+    
+    .testimonials__track {
+        animation-duration: 10s;
+    }
+
+    // Página Nosotros móvil
+    .about-story,
+    .values,
+    .team {
+        padding: variables.$section-padding-mobile 0;
+    }
+    
+    .about-story__content,
+    .team__founders {
+        gap: variables.$spacing-lg;
+    }
+    
+    .values__item,
+    .team__founder,
+    .team__member {
+        padding: variables.$spacing-md;
+    }
+    
+    .team__members {
+        grid-template-columns: 1fr;
+    }
+    
+    .team__illustration {
+        max-width: 300px;
+    }
+}

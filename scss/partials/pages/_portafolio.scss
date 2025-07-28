@@ -1,0 +1,104 @@
+// ===== IMPORTAR VARIABLES Y MIXINS =====
+@use "../utilities/variables";
+@use "../utilities/mixins";
+
+// ===== PÁGINA PORTAFOLIO =====
+
+// Sección Galería de Portafolio
+.portfolio-gallery {
+    padding: variables.$section-padding 0;
+    background-color: variables.$color-bg-secondary;
+
+    &__container {
+        @include mixins.container-base(variables.$container-large);
+        padding: 0 10px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        gap: variables.$spacing-lg;
+        grid-template-areas: 
+            "item1 item1 item2 item2"
+            "item3 item3 item3 item3"
+            "item4 item5 item5 item5"  
+            "item6 item6 item7 item7"
+            "item8 item8 item8 item9"
+            "item10 item10 item10 item10";
+    }
+
+    &__item {
+        border-radius: variables.$border-radius-xl;
+        overflow: hidden;
+        box-shadow: variables.$shadow-md;
+        @include mixins.smooth-transition;
+        position: relative;
+        opacity: 0;
+        animation: fadeInUp 0.9s ease forwards;
+
+        &:nth-child(1) { 
+            grid-area: item1;
+            animation-delay: 0.1s;
+        }
+        &:nth-child(2) { 
+            grid-area: item2;
+            animation-delay: 0.2s;
+        }
+        &:nth-child(3) { 
+            grid-area: item3;
+            animation-delay: 0.3s;
+        }
+        &:nth-child(4) { 
+            grid-area: item4;
+            animation-delay: 0.4s;
+        }
+        &:nth-child(5) { 
+            grid-area: item5;
+            animation-delay: 0.5s;
+        }
+        &:nth-child(6) { 
+            grid-area: item6;
+            animation-delay: 0.6s;
+        }
+        &:nth-child(7) { 
+            grid-area: item7;
+            animation-delay: 0.7s;
+        }
+        &:nth-child(8) { 
+            grid-area: item8;
+            animation-delay: 0.8s;
+        }
+        &:nth-child(9) { 
+            grid-area: item9;
+            animation-delay: 0.9s;
+        }
+        &:nth-child(10) { 
+            grid-area: item10;
+            animation-delay: 1s;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+
+    &__link {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__image {
+        width: 100%;
+        height: clamp(200px, 50vw, 500px);
+        object-fit: cover;
+        display: block;
+        @include mixins.smooth-transition;
+    }
+
+    &__item:hover &__image {
+        transform: scale(1.05);
+    }
+}

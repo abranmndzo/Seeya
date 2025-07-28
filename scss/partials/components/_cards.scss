@@ -1,0 +1,106 @@
+// ===== IMPORTAR VARIABLES Y EXTENDS =====
+@use "../utilities/variables";
+@use "../utilities/extend";
+
+// ===== CARDS =====
+
+// Cards de testimonios
+.testimonials__item {
+    flex: 0 0 400px;
+    @extend %card-base;
+    border-radius: variables.$border-radius-sm;
+    box-shadow: variables.$shadow-sm;
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
+
+.testimonials__quote {
+    font-size: variables.$font-size-md;
+    font-weight: 700;
+    color: variables.$color-text;
+    line-height: 1.6;
+    margin-bottom: variables.$spacing-md;
+    font-style: italic;
+}
+
+.testimonials__author {
+    font-size: variables.$font-size-xs;
+    color: variables.$color-secondary;
+    font-weight: 500;
+}
+
+// Cards de valores
+.values__item {
+    text-align: center;
+    padding: variables.$spacing-lg;
+    background-color: variables.$color-bg-secondary;
+    border-radius: variables.$border-radius-md;
+    transition: transform variables.$transition-normal ease, box-shadow variables.$transition-normal ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.values__title {
+    margin-bottom: variables.$spacing-md;
+    color: variables.$color-primary;
+    font-size: clamp(24px, 4vw, 32px);
+}
+
+.values__description {
+    font-size: variables.$font-size-md;
+    line-height: 1.6;
+    color: variables.$color-text-light;
+}
+
+// Cards de equipo
+.team__founder {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+    padding: variables.$spacing-lg;
+    transition: transform variables.$transition-normal ease;
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
+
+.team__founder-name {
+    margin-bottom: 0.5rem;
+    color: variables.$color-primary;
+    font-size: variables.$font-size-lg;
+}
+
+.team__founder-role {
+    color: variables.$color-secondary;
+    font-size: variables.$font-size-sm;
+    line-height: 1.4;
+}
+
+.team__member {
+    text-align: center;
+    padding: variables.$spacing-md;
+    transition: transform variables.$transition-normal ease;
+
+    &:hover {
+        transform: translateY(-3px);
+    }
+}
+
+.team__member-name {
+    margin-bottom: 0.5rem;
+    color: variables.$color-primary;
+    font-size: 20px;
+}
+
+.team__member-role {
+    color: variables.$color-secondary;
+    font-size: variables.$font-size-xs;
+    line-height: 1.4;
+}

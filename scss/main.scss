@@ -1,32 +1,34 @@
-// 1. Utilities - Variables, mixins y extends
-@use "../scss/partials/utilities/variables";
-@use "../scss/partials/utilities/mixins";
-@use "../scss/partials/utilities/exend";
+// ===== MAIN SCSS - SEEYA =====
 
-// 2. Base - Fundamentos
-@use "../scss/partials/base/reset";
-@use "../scss/partials/base/typography";
-@use "../scss/partials/base/global";
+// UTILITIES
+@use "./partials/utilities/variables";
+@use "./partials/utilities/mixins";
+@use "./partials/utilities/extend";
 
-// 3. Layout - Estructura
-@use "../scss/partials/layout/header";
-@use "../scss/partials/layout/main";
-@use "../scss/partials/layout/section";
-@use "../scss/partials/layout/footer";
+// BASE
+@use "./partials/base/reset";
+@use "./partials/base/typography";
+@use "./partials/base/global";
 
-// 4. Components - Elementos reutilizables
-@use "../scss/partials/components/buttons";
-@use "../scss/partials/components/cards";
-@use "../scss/partials/components/forms";
-@use "../scss/partials/components/overlays";
+// LAYOUT
+@use "./partials/layout/section";
+@use "./partials/layout/header";
+@use "./partials/layout/main";
+@use "./partials/layout/footer";
 
-// 5. Pages - Específico por página
-@use "../scss/partials/pages/home";
-@use "../scss/partials/pages/nosotros";
-@use "../scss/partials/pages/servicios";
-@use "../scss/partials/pages/portafolio";
-@use "../scss/partials/pages/contacto";
+// COMPONENTS
+@use "./partials/components/buttons";
+@use "./partials/components/cards";
+@use "./partials/components/forms";
+@use "./partials/components/overlays";
 
-// 6. Helpers - Ayudantes
-@use "../scss/partials/helpers/animations";
-@use "../scss/partials/helpers/responsive";
+// PAGES
+@use "./partials/pages/home";
+@use "./partials/pages/nosotros";
+@use "./partials/pages/servicios";
+@use "./partials/pages/portafolio";
+@use "./partials/pages/contacto";
+
+// HELPERS
+@use "./partials/helpers/animations";
+@use "./partials/helpers/responsive";

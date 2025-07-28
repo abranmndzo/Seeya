@@ -1,0 +1,167 @@
+// ===== IMPORTAR VARIABLES Y MIXINS =====
+@use "../utilities/variables";
+@use "../utilities/mixins";
+
+// ===== PÁGINA SERVICIOS =====
+
+// Sección Iconos de Servicios
+.services-icons {
+    padding: variables.$section-padding 0 variables.$section-padding-mobile 0;
+    background-color: variables.$color-bg-primary;
+    position: relative;
+
+    &__container {
+        @include mixins.container-base();
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: variables.$spacing-xxl;
+        position: relative;
+        z-index: variables.$z-index-overlay;
+    }
+
+    &__line {
+        position: absolute;
+        top: 50%;
+        left: 2%;
+        right: 0;
+        z-index: 1;
+    }
+
+    &__item {
+        text-align: center;
+        position: relative;
+        z-index: 3;
+        @include mixins.smooth-transition;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+
+    &__image {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto variables.$spacing-lg auto;
+        display: block;
+    }
+
+    &__title {
+        color: variables.$color-primary;
+        font-size: variables.$font-size-md;
+        line-height: 1.3;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    &__divider {
+        max-width: 1400;
+        text-align: center;
+        margin-top: variables.$spacing-xxl;
+    }
+
+    &__scissors {
+        width: 100%;
+        max-width: 1400px;
+        height: auto;
+        padding: 3rem 1rem;
+    }
+}
+
+// Sección Detalles de Servicios
+.services-details {
+    padding: 20px 0;
+    background-color: variables.$color-bg-primary;
+
+    &__section {
+        max-width: 1300px;
+        margin: 0 auto 5rem auto;
+        padding: 0 20px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__divider {
+        display: block;
+        width: 10vw;
+        height: auto;
+        margin: 0 auto variables.$spacing-lg auto;
+        opacity: 0.3;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: variables.$spacing-xl;
+        color: variables.$color-primary;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        margin-top: variables.$spacing-lg;
+
+        &--single {
+            grid-template-columns: 1fr;
+            place-items: center;
+        }
+
+        &--grid-2x2 {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+    }
+
+    &__category {
+        border: 1px solid variables.$color-text-light;
+        padding: variables.$spacing-lg;
+        border-radius: variables.$border-radius-md;
+        @include mixins.smooth-transition;
+
+        &--single {
+            max-width: 800px;
+            width: 50vw;
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+        }
+    }
+
+    &__category-title {
+        color: variables.$color-primary;
+        margin-bottom: variables.$spacing-md;
+        font-size: variables.$font-size-lg;
+        border-bottom: 2px solid variables.$color-border;
+        padding-bottom: 0.5rem;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        font-family: variables.$font-body;
+        font-size: variables.$font-size-sm;
+        color: variables.$color-text-light;
+        line-height: 1.6;
+        margin-bottom: 0.8rem;
+        padding-left: variables.$spacing-md;
+        position: relative;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: variables.$color-accent;
+            font-weight: bold;
+        }
+    }
+}
