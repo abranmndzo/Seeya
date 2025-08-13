@@ -1,7 +1,7 @@
 @use "../utilities/variables";
 @use "../utilities/mixins";
 
-// ===== SISTEMA DE SECCIONES REUTILIZABLE =====
+// ===== SISTEMA DE SECCIONES =====
 .section {
     @include mixins.container-base(variables.$container-max-width);
     display: grid;
