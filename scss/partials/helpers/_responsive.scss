@@ -33,7 +33,7 @@
         border-radius: variables.$border-radius-lg;
 
         &__nav-collapse {
-            background: transparent !important;
+            background: transparent;
             backdrop-filter: none;
             border: none;
             box-shadow: none;
@@ -53,7 +53,7 @@
         &__nav-link {
             width: 100%;
             text-align: center;
-            padding: 0.75rem 1rem !important;
+            padding: 0.75rem 1rem;
             border-radius: variables.$border-radius-md;
         }
     }
@@ -214,8 +214,8 @@
         }
 
         &__nav-link {
-            font-size: variables.$font-size-xs !important;
-            padding: 0.6rem 1rem !important;
+            font-size: variables.$font-size-xs;
+            padding: 0.6rem 1rem;
         }
     }
 

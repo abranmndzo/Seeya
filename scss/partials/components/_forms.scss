@@ -25,11 +25,11 @@
 
 // Labels personalizados
 .contact__label {
-    font-family: variables.$font-body !important;
-    font-size: variables.$font-size-xs !important;
-    font-weight: 600 !important;
-    color: variables.$color-primary !important;
-    margin-bottom: 0.5rem !important;
+    font-family: variables.$font-body;
+    font-size: variables.$font-size-xs;
+    font-weight: 600;
+    color: variables.$color-primary;
+    margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -38,32 +38,32 @@
 .contact__input,
 .contact__select,
 .contact__textarea {
-    font-family: variables.$font-body !important;
-    font-size: variables.$font-size-sm !important;
-    color: variables.$color-text !important;
-    background-color: variables.$color-bg-secondary !important;
-    border: 2px solid variables.$color-border !important;
-    border-radius: variables.$border-radius-sm !important;
-    padding: 12px 16px !important;
-    transition: all variables.$transition-normal ease !important;
+    font-family: variables.$font-body;
+    font-size: variables.$font-size-sm;
+    color: variables.$color-text;
+    background-color: variables.$color-bg-secondary;
+    border: 2px solid variables.$color-border;
+    border-radius: variables.$border-radius-sm;
+    padding: 12px 16px;
+    transition: all variables.$transition-normal ease;
 
     &:focus {
-        background-color: variables.$color-bg-primary !important;
-        border-color: variables.$color-primary !important;
-        box-shadow: 0 0 0 0.2rem rgba(26, 26, 26, 0.1) !important;
-        outline: none !important;
+        background-color: variables.$color-bg-primary;
+        border-color: variables.$color-primary;
+        box-shadow: 0 0 0 0.2rem rgba(26, 26, 26, 0.1);
+        outline: none;
     }
 
     &::placeholder {
-        color: variables.$color-text-lighter !important;
+        color: variables.$color-text-lighter;
         font-style: italic;
     }
 }
 
 // Textarea específico
 .contact__textarea {
-    resize: vertical !important;
-    min-height: 120px !important;
+    resize: vertical;
+    min-height: 120px;
 }
 
 .contact__select option {
