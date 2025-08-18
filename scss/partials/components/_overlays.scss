@@ -3,7 +3,7 @@
 // ===== OVERLAYS =====
 
 // Overlay del portfolio
-.portfolio-gallery__overlay {
+.overlay {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -12,24 +12,20 @@
     padding: 3rem 2rem 2rem 2rem;
     transform: translateY(100%);
     transition: transform variables.$transition-normal ease;
-}
 
-.portfolio-gallery__item:hover .portfolio-gallery__overlay {
-    transform: translateY(0);
-}
+    h5 {
+        font-family: variables.$font-heading;
+        font-size: variables.$font-size-lg;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: variables.$color-bg-primary;
+    }
 
-.portfolio-gallery__title {
-    font-family: variables.$font-heading;
-    font-size: variables.$font-size-lg;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: variables.$color-bg-primary;
-}
-
-.portfolio-gallery__category {
-    font-family: variables.$font-body;
-    font-size: variables.$font-size-sm;
-    color: variables.$color-text-lightest;
-    margin: 0;
-    letter-spacing: 1px;
+    p {
+        font-family: variables.$font-body;
+        font-size: variables.$font-size-sm;
+        color: variables.$color-text-lightest;
+        margin: 0;
+        letter-spacing: 1px;
+    }
 }

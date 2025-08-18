@@ -3,8 +3,7 @@
 
 // ===== HEADER Y NAVEGACIÓN =====
 
-// Contenedor principal del header
-.header {
+header {
     position: fixed;
     top: 1%;
     left: 50%;
@@ -12,105 +11,103 @@
     z-index: variables.$z-index-header;
     width: 95%;
     max-width: variables.$container-medium;
-
+    
     // Efecto glassmorphism
     @include mixins.glassmorphism;
-
+    
     // Diseño visual
     border-radius: variables.$border-radius-round;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: variables.$shadow-lg;
-
+    
     // Animaciones
     @include mixins.smooth-transition;
     animation: slideDown 1s cubic-bezier(0.4, 0, 0.2, 1);
-
+    
     // Efecto hover en header
     &:hover {
         background: rgba(255, 255, 255, 0.35);
         box-shadow: variables.$shadow-xl;
         transform: translateX(-50%) translateY(-2px);
     }
-}
 
-// Navbar de Bootstrap personalizada
-.header__navbar {
-    padding: 0.5rem 1.5rem;
-    background: transparent;
-    border: none;
-}
-
-// Contenedor interno del header
-.header__container {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    @include mixins.flex-center;
-    justify-content: space-between;
-}
-
-// Logo
-.header__logo {
-    @include mixins.flex-center;
-    padding: 0;
-    background: transparent;
-
-    &-img {
-        height: 32px;
-        width: auto;
-        filter: brightness(0.2);
-    }
-}
-
-// Navegación Activa
-.header .header__nav-link--active {
-    color: variables.$color-accent;
-    font-weight: 600;
-}
-
-// Botón hamburguesa
-.header__toggle {
-    @include mixins.button-reset;
-    padding: 0.25rem;
-    border-radius: variables.$border-radius-sm;
-    transition: background-color variables.$transition-normal ease;
-
-    &:hover {
-        background: rgba(26, 26, 26, 0.1);
+    // Navbar de Bootstrap personalizada
+    nav.navbar {
+        padding: 0.5rem 1.5rem;
+        background: transparent;
+        border: none;
     }
 
-    &:focus {
-        box-shadow: none;
-        outline: none;
+    .container-fluid {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        @include mixins.flex-center;
+        justify-content: space-between;
     }
-}
 
-// Lista de navegación
-.header__nav-list {
-    @include mixins.flex-center;
-    gap: 0;
-    margin: 0;
-}
+    // Logo
+    .navbar-brand {
+        @include mixins.flex-center;
+        padding: 0;
+        background: transparent;
 
-.header__nav-item {
-    margin: 0;
-}
+        img {
+            height: 32px;
+            width: auto;
+            filter: brightness(0.2);
+        }
+    }
 
-// Enlaces de navegación
-.header__nav-link {
-    @include mixins.flex-center;
-    font-family: variables.$font-body;
-    font-weight: 500;
-    font-size: 15px;
-    color: variables.$color-primary;
-    text-decoration: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: variables.$border-radius-lg;
-    transition: all variables.$transition-normal cubic-bezier(0.4, 0, 0.2, 1);
-    line-height: 1;
+    // Botón hamburguesa
+    .navbar-toggler {
+        @include mixins.button-reset;
+        padding: 0.25rem;
+        border-radius: variables.$border-radius-sm;
+        transition: background-color variables.$transition-normal ease;
 
-    &:hover {
-        color: variables.$color-accent;
-        transform: translateY(-1px);
+        &:hover {
+            background: rgba(26, 26, 26, 0.1);
+        }
+
+        &:focus {
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    // Lista de navegación
+    .navbar-nav {
+        @include mixins.flex-center;
+        gap: 0;
+        margin: 0;
+
+        .nav-item {
+            margin: 0;
+        }
+    }
+
+    // Enlaces de navegación
+    .nav-link {
+        @include mixins.flex-center;
+        font-family: variables.$font-body;
+        font-weight: 500;
+        font-size: 15px;
+        color: variables.$color-primary;
+        text-decoration: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: variables.$border-radius-lg;
+        transition: all variables.$transition-normal cubic-bezier(0.4, 0, 0.2, 1);
+        line-height: 1;
+
+        &:hover {
+            color: variables.$color-accent;
+            transform: translateY(-1px);
+        }
+
+        &.active {
+            color: variables.$color-accent;
+            font-weight: 600;
+        }
     }
 }

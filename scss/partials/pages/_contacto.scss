@@ -1,5 +1,6 @@
 @use "../utilities/variables";
 @use "../utilities/mixins";
+@use "../utilities/extend";
 
 // ===== PÁGINA CONTACTO =====
 
@@ -8,11 +9,128 @@
     padding: 100px 0;
     background-color: variables.$color-bg-primary;
 
-    &__container {
-        @include mixins.container-base();
+    .contact-container {
+        @extend %container-base;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: variables.$spacing-xxl;
         align-items: start;
+    }
+
+    // Información de contacto
+    .info {
+        padding: variables.$spacing-lg;
+        background-color: variables.$color-bg-secondary;
+        border-radius: variables.$border-radius-lg;
+
+        h4 {
+            font-family: variables.$font-heading;
+            font-size: variables.$font-size-xl;
+            font-weight: bold;
+            color: variables.$color-primary;
+            margin-bottom: variables.$spacing-md;
+        }
+
+        .description {
+            font-family: variables.$font-body;
+            font-size: variables.$font-size-md;
+            color: variables.$color-text-light;
+            line-height: 1.6;
+            margin-bottom: variables.$spacing-xl;
+        }
+
+        .details {
+            margin-bottom: variables.$spacing-xl;
+
+            .detail {
+                margin-bottom: variables.$spacing-lg;
+                padding-bottom: variables.$spacing-md;
+                border-bottom: 1px solid variables.$color-border;
+                @extend %smooth-transition;
+
+                &:last-child {
+                    border-bottom: none;
+                    margin-bottom: 0;
+                }
+
+                &:hover {
+                    padding-left: 10px;
+                }
+
+                h5 {
+                    font-family: variables.$font-body;
+                    font-size: variables.$font-size-sm;
+                    font-weight: bold;
+                    color: variables.$color-primary;
+                    margin-bottom: 0.5rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+
+                p {
+                    font-family: variables.$font-body;
+                    font-size: variables.$font-size-sm;
+                    color: variables.$color-text-light;
+                    line-height: 1.5;
+                    margin: 0;
+                }
+            }
+        }
+
+        .social-section {
+            text-align: center;
+
+            h5 {
+                font-family: variables.$font-body;
+                font-size: variables.$font-size-md;
+                font-weight: bold;
+                color: variables.$color-primary;
+                margin-bottom: variables.$spacing-md;
+            }
+
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: variables.$spacing-md;
+
+                a {
+                    display: inline-block;
+                    @extend %smooth-transition;
+
+                    &:hover {
+                        transform: translateY(-3px);
+                    }
+
+                    img {
+                        background-color: variables.$color-primary;
+                        width: 160px;
+                        height: 56px;
+                        padding: 10px;
+                        border-radius: variables.$border-radius-xl;
+                    }
+                }
+            }
+        }
+    }
+
+    // Formulario de contacto
+    .form-section {
+        padding: variables.$spacing-lg;
+        background-color: variables.$color-bg-primary;
+        border-radius: variables.$border-radius-lg;
+        box-shadow: variables.$shadow-lg;
+
+        h4 {
+            font-family: variables.$font-heading;
+            font-size: variables.$font-size-xl;
+            font-weight: bold;
+            color: variables.$color-primary;
+            margin-bottom: variables.$spacing-lg;
+            text-align: center;
+        }
+
+        .form {
+            width: 100%;
+        }
     }
 }

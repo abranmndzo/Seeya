@@ -1,58 +1,65 @@
 @use "../utilities/variables";
 @use "../utilities/mixins";
+@use "../utilities/extend";
 
 // ===== PÁGINA NOSOTROS =====
 
 // Sección Historia
-.about-story {
+.story {
     padding: 100px 0;
     background-color: variables.$color-bg-secondary;
 
-    &__container {
-        @include mixins.container-base(variables.$container-large);
+    .container {
+        @extend %container-large;
+        display: flex;
+        flex-direction: column;
+        gap: variables.$spacing-xl;
+        grid-template-columns: none;
+        grid-template-areas: none;
     }
 
-    &__content {
+    .content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: variables.$spacing-xxl;
         align-items: center;
     }
 
-    &__text {
+    .text {
         padding-right: variables.$spacing-lg;
-    }
 
-    &__title {
-        margin-bottom: variables.$spacing-lg;
-        color: variables.$color-primary;
-    }
+        h3 {
+            margin-bottom: variables.$spacing-lg;
+            color: variables.$color-primary;
+        }
 
-    &__paragraph {
-        margin-bottom: variables.$spacing-md;
-        font-size: clamp(16px, 3vw, 20px);
-        line-height: 1.7;
-        color: variables.$color-text-light;
+        p {
+            margin-bottom: variables.$spacing-md;
+            font-size: clamp(16px, 3vw, 20px);
+            line-height: 1.7;
+            color: variables.$color-text-light;
 
-        &:last-child {
-            margin-bottom: 0;
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 
-    &__image-container {
+    .image-container {
         border-radius: variables.$border-radius-xl;
         overflow: hidden;
         box-shadow: variables.$shadow-lg;
-    }
 
-    &__image {
-        width: 100%;
-        height: clamp(250px, 50vw, 600px);
-        object-fit: cover;
-        display: block;
+        img {
+            width: 100%;
+            height: clamp(250px, 50vw, 600px);
+            object-fit: cover;
+            display: block;
+            @extend %smooth-transition;
 
-        &:hover {
-            transform: scale(1.02);
+            &:hover {
+                transform: scale(1.02);
+            }
         }
     }
 }
@@ -62,11 +69,16 @@
     padding: 100px 0;
     background-color: variables.$color-bg-primary;
 
-    &__container {
-        @include mixins.container-base();
+    .container {
+        @extend %container-base;
+        display: flex;
+        flex-direction: column;
+        gap: variables.$spacing-xl;
+        grid-template-columns: none;
+        grid-template-areas: none;
     }
 
-    &__grid {
+    .grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: variables.$spacing-xl;
@@ -78,19 +90,34 @@
     padding: 100px 0;
     background-color: variables.$color-bg-secondary;
 
-    &__founders {
-        @include mixins.container-base();
+    .container {
+        @extend %container-base;
+        display: flex;
+        flex-direction: column;
+        gap: variables.$spacing-xl;
+        grid-template-columns: none;
+        grid-template-areas: none;
+    }
+
+    .founders {
+        @extend %container-base;
         margin-bottom: variables.$spacing-xxl;
         display: grid;
         grid-template-columns: 1fr;
         gap: variables.$spacing-xxl;
         align-items: center;
 
-        &-image {
+        .image {
             @include mixins.flex-center;
+
+            .illustration {
+                width: 100%;
+                max-width: 600px;
+                height: auto;
+            }
         }
 
-        &-info {
+        .info {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -98,14 +125,8 @@
         }
     }
 
-    &__illustration {
-        width: 100%;
-        max-width: 600px;
-        height: auto;
-    }
-
-    &__members {
-        @include mixins.container-base();
+    .members {
+        @extend %container-base;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: variables.$spacing-lg;

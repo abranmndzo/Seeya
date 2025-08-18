@@ -2,29 +2,8 @@
 
 // ===== FORMULARIOS =====
 
-// Contenedor del formulario
-.contact__form {
-    padding: variables.$spacing-lg;
-    background-color: variables.$color-bg-primary;
-    border-radius: variables.$border-radius-lg;
-    box-shadow: variables.$shadow-lg;
-}
-
-.contact__form-title {
-    font-family: variables.$font-heading;
-    font-size: variables.$font-size-xl;
-    font-weight: bold;
-    color: variables.$color-primary;
-    margin-bottom: variables.$spacing-lg;
-    text-align: center;
-}
-
-.contact__form-element {
-    width: 100%;
-}
-
 // Labels personalizados
-.contact__label {
+.form-label {
     font-family: variables.$font-body;
     font-size: variables.$font-size-xs;
     font-weight: 600;
@@ -35,9 +14,8 @@
 }
 
 // Inputs personalizados
-.contact__input,
-.contact__select,
-.contact__textarea {
+.form-control,
+.form-select {
     font-family: variables.$font-body;
     font-size: variables.$font-size-sm;
     color: variables.$color-text;
@@ -61,110 +39,7 @@
 }
 
 // Textarea específico
-.contact__textarea {
+textarea.form-control {
     resize: vertical;
     min-height: 120px;
-}
-
-.contact__select option {
-    font-family: variables.$font-body;
-    color: variables.$color-text;
-}
-
-// Información de contacto
-.contact__info {
-    padding: variables.$spacing-lg;
-    background-color: variables.$color-bg-secondary;
-    border-radius: variables.$border-radius-lg;
-}
-
-.contact__info-title {
-    font-family: variables.$font-heading;
-    font-size: variables.$font-size-xl;
-    font-weight: bold;
-    color: variables.$color-primary;
-    margin-bottom: variables.$spacing-md;
-}
-
-.contact__info-description {
-    font-family: variables.$font-body;
-    font-size: variables.$font-size-md;
-    color: variables.$color-text-light;
-    line-height: 1.6;
-    margin-bottom: variables.$spacing-xl;
-}
-
-// Detalles de contacto
-.contact__details {
-    margin-bottom: variables.$spacing-xl;
-}
-
-.contact__detail {
-    margin-bottom: variables.$spacing-lg;
-    padding-bottom: variables.$spacing-md;
-    border-bottom: 1px solid variables.$color-border;
-    transition: padding-left variables.$transition-normal ease;
-
-    &:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-    }
-
-    &:hover {
-        padding-left: 10px;
-    }
-}
-
-.contact__detail-title {
-    font-family: variables.$font-body;
-    font-size: variables.$font-size-sm;
-    font-weight: bold;
-    color: variables.$color-primary;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.contact__detail-info {
-    font-family: variables.$font-body;
-    font-size: variables.$font-size-sm;
-    color: variables.$color-text-light;
-    line-height: 1.5;
-    margin: 0;
-}
-
-// Redes sociales
-.contact__social {
-    text-align: center;
-}
-
-.contact__social-title {
-    font-family: variables.$font-body;
-    font-size: variables.$font-size-md;
-    font-weight: bold;
-    color: variables.$color-primary;
-    margin-bottom: variables.$spacing-md;
-}
-
-.contact__social-links {
-    display: flex;
-    justify-content: center;
-    gap: variables.$spacing-md;
-}
-
-.contact__social-link {
-    display: inline-block;
-    transition: transform variables.$transition-normal ease;
-
-    &:hover {
-        transform: translateY(-3px);
-    }
-}
-
-.contact__social-icon {
-    background-color: variables.$color-primary;
-    width: 160px;
-    height: 56px;
-    padding: 10px;
-    border-radius: variables.$border-radius-xl;
 }

@@ -4,12 +4,13 @@
 // ===== BOTONES =====
 
 // Botón CTA principal
-.cta__button {
+.btn-cta {
+    @extend %button-base;
     font-family: variables.$font-heading;
     font-size: clamp(32px, 5vw, 48px);
     text-decoration-line: underline;
     color: variables.$color-accent;
-    transition: color variables.$transition-normal ease;
+    background: transparent;
 
     &:hover {
         color: variables.$color-primary;
@@ -17,7 +18,7 @@
 }
 
 // Botón de formulario de contacto
-.contact__button {
+.submit-btn {
     @extend %button-base;
     font-size: variables.$font-size-md;
     color: variables.$color-bg-primary;

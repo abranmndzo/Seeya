@@ -1,5 +1,6 @@
 @use "../utilities/variables";
 @use "../utilities/mixins";
+@use "../utilities/extend";
 
 // ===== PÁGINA SERVICIOS =====
 
@@ -9,68 +10,70 @@
     background-color: variables.$color-bg-primary;
     position: relative;
 
-    &__container {
-        @include mixins.container-base();
+    .container {
+        @extend %container-base;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: variables.$spacing-xxl;
         position: relative;
         z-index: variables.$z-index-overlay;
+        grid-template-columns: none;
+        grid-template-areas: none;
     }
 
-    &__line {
+    .line {
         max-width: 100%;
         position: absolute;
         top: 50%;
         left: 2%;
         right: 0;
         z-index: 1;
+
+        img {
+            max-width: 100%;
+        }
     }
 
-    &__line--img {
-        max-width: 100%;
-    }
-
-    &__item {
+    article {
         flex: 1 1 280px;
         max-width: 350px;
         text-align: center;
         position: relative;
         z-index: 3;
-        @include mixins.smooth-transition;
+        @extend %smooth-transition;
 
         &:hover {
             transform: translateY(-5px);
         }
+
+        img {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto variables.$spacing-lg auto;
+            display: block;
+        }
+
+        h5 {
+            color: variables.$color-primary;
+            font-size: variables.$font-size-md;
+            line-height: 1.3;
+            margin: 0;
+            font-weight: 600;
+        }
     }
 
-    &__image {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto variables.$spacing-lg auto;
-        display: block;
-    }
-
-    &__title {
-        color: variables.$color-primary;
-        font-size: variables.$font-size-md;
-        line-height: 1.3;
-        margin: 0;
-        font-weight: 600;
-    }
-
-    &__divider {
-        max-width: 1400;
+    .divider {
+        max-width: 1400px;
         text-align: center;
         margin-top: variables.$spacing-xxl;
-    }
 
-    &__scissors {
-        width: 100%;
-        max-width: 100vw;
-        height: auto;
-        padding: 1rem;
+        .scissors {
+            width: 100%;
+            max-width: 100vw;
+            height: auto;
+            padding: 1rem;
+        }
     }
 }
 
@@ -79,7 +82,7 @@
     padding: 20px 0;
     background-color: variables.$color-bg-primary;
 
-    &__section {
+    .service-section {
         max-width: 1300px;
         margin: 0 auto 5rem auto;
         padding: 0 20px;
@@ -87,9 +90,15 @@
         &:last-of-type {
             margin-bottom: 0;
         }
+
+        h3 {
+            text-align: center;
+            margin-bottom: variables.$spacing-xl;
+            color: variables.$color-primary;
+        }
     }
 
-    &__divider {
+    .divider {
         display: block;
         width: 10vw;
         height: auto;
@@ -97,78 +106,67 @@
         opacity: 0.3;
     }
 
-    &__title {
-        text-align: center;
-        margin-bottom: variables.$spacing-xl;
-        color: variables.$color-primary;
-    }
-
-    &__content {
+    .content {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2.5rem;
         margin-top: variables.$spacing-lg;
 
-        &--single {
+        &.single {
             grid-template-columns: 1fr;
             place-items: center;
         }
 
-        &--grid-2x2 {
+        &.grid-2x2 {
             grid-template-columns: repeat(2, 1fr);
             gap: 2.5rem;
         }
     }
 
-    &__category {
+    .category {
         border: 1px solid variables.$color-text-light;
         padding: variables.$spacing-lg;
         border-radius: variables.$border-radius-md;
-        @include mixins.smooth-transition;
-
-        &--single {
-            max-width: 100%;
-            width: 100%;
-        }
+        @extend %smooth-transition;
 
         &:hover {
             transform: translateY(-3px);
         }
-    }
 
-    &__category-title {
-        color: variables.$color-primary;
-        margin-bottom: variables.$spacing-md;
-        font-size: variables.$font-size-lg;
-        border-bottom: 2px solid variables.$color-border;
-        padding-bottom: 0.5rem;
-    }
-
-    &__list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    &__item {
-        font-family: variables.$font-body;
-        font-size: variables.$font-size-sm;
-        color: variables.$color-text-light;
-        line-height: 1.6;
-        margin-bottom: 0.8rem;
-        padding-left: variables.$spacing-md;
-        position: relative;
-
-        &:last-child {
-            margin-bottom: 0;
+        h4 {
+            color: variables.$color-primary;
+            margin-bottom: variables.$spacing-md;
+            font-size: variables.$font-size-lg;
+            border-bottom: 2px solid variables.$color-border;
+            padding-bottom: 0.5rem;
         }
 
-        &::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: variables.$color-accent;
-            font-weight: bold;
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                font-family: variables.$font-body;
+                font-size: variables.$font-size-sm;
+                color: variables.$color-text-light;
+                line-height: 1.6;
+                margin-bottom: 0.8rem;
+                padding-left: variables.$spacing-md;
+                position: relative;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                &::before {
+                    content: "→";
+                    position: absolute;
+                    left: 0;
+                    color: variables.$color-accent;
+                    font-weight: bold;
+                }
+            }
         }
     }
 }

@@ -18,16 +18,13 @@
 // ===== SISTEMA DE TIPOGRAFÍAS =====
 
 // Encabezados principales (Basis Grotesque)
-h1,
-h3,
-h4 {
+h1, h3, h4 {
     font-family: variables.$font-heading;
     font-weight: bold;
     color: variables.$color-primary;
 }
 
-h1,
-h3 {
+h1, h3 {
     font-size: clamp(48px, 8vw, 96px);
     line-height: 1;
 }
