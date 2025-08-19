@@ -11,19 +11,19 @@ header {
     z-index: variables.$z-index-header;
     width: 95%;
     max-width: variables.$container-medium;
-    
+
     // Efecto glassmorphism
     @include mixins.glassmorphism;
-    
+
     // Diseño visual
     border-radius: variables.$border-radius-round;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: variables.$shadow-lg;
-    
+
     // Animaciones
     @include mixins.smooth-transition;
     animation: slideDown 1s cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     // Efecto hover en header
     &:hover {
         background: rgba(255, 255, 255, 0.35);
@@ -31,13 +31,14 @@ header {
         transform: translateX(-50%) translateY(-2px);
     }
 
-    // Navbar de Bootstrap personalizada
-    nav.navbar {
+    // Navbar personalizada
+    .custom-nav {
         padding: 0.5rem 1.5rem;
         background: transparent;
         border: none;
     }
 
+    // Contenedor interno
     .container-fluid {
         max-width: 100%;
         margin: 0;
@@ -47,7 +48,7 @@ header {
     }
 
     // Logo
-    .navbar-brand {
+    .custom-logo {
         @include mixins.flex-center;
         padding: 0;
         background: transparent;
@@ -56,11 +57,16 @@ header {
             height: 32px;
             width: auto;
             filter: brightness(0.2);
+            transition: filter variables.$transition-normal ease;
+        }
+
+        &:hover img {
+            filter: brightness(0.4);
         }
     }
 
     // Botón hamburguesa
-    .navbar-toggler {
+    .custom-toggle {
         @include mixins.button-reset;
         padding: 0.25rem;
         border-radius: variables.$border-radius-sm;
@@ -81,14 +87,14 @@ header {
         @include mixins.flex-center;
         gap: 0;
         margin: 0;
+    }
 
-        .nav-item {
-            margin: 0;
-        }
+    .nav-item {
+        margin: 0;
     }
 
     // Enlaces de navegación
-    .nav-link {
+    .custom-link {
         @include mixins.flex-center;
         font-family: variables.$font-body;
         font-weight: 500;
@@ -103,6 +109,12 @@ header {
         &:hover {
             color: variables.$color-accent;
             transform: translateY(-1px);
+            text-decoration: none;
+        }
+
+        &:focus {
+            color: variables.$color-accent;
+            text-decoration: none;
         }
 
         &.active {
